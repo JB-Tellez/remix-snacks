@@ -6,7 +6,8 @@ import SnackList from "~/components/snack-list";
 import CreateForm from "~/components/create-form";
 
 export async function loader() {
-  const res = await fetch("https://fastsnacks-utumofjy.b4a.run/snacks");
+  const url = process.env.API_URL ?? '';
+  const res = await fetch(url);
   const data = json(await res.json());
   return data;
 }
