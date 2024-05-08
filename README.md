@@ -6,12 +6,12 @@ A modern web application for managing snacks, built with cutting-edge technologi
 ## Overview
 ------------
 
-This repository contains a web application that allows users to perform CRUD (Create, Read, Update, Delete) operations on a Snack resource. A Snack has two attributes: `name` and `description`. The application is built using [Remix]((https://remix.run/)), a popular framework for building web applications, and utilizes [Shadcn/ui]((https://ui.shadcn.com/)) for a consistent and visually appealing user interface. Styling is handled by [Tailwind CSS]((https://tailwindcss.com/)), a utility-first CSS framework.
+This repository contains a web application that allows users to perform CRUD (Create, Read, Update, Delete) operations on a Snack resource. A Snack has two attributes: `name` and `description`. The application is built using [Remix](https://remix.run/), a popular framework for building web applications, and utilizes [Shadcn/ui](https://ui.shadcn.com/) for a consistent and visually appealing user interface. Styling is handled by [Tailwind CSS](https://tailwindcss.com/), a utility-first CSS framework.
 
 ## Backend
 ------------
 
-The backend API is built using [FastAPI]((https://fastapi.tiangolo.com/)), a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints. The API connects to [Supabase]((https://supabase.com/)), a modern, cloud-native database that provides a PostgreSQL-compatible interface.
+The backend API is built using [FastAPI](https://fastapi.tiangolo.com/), a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints. The API connects to [Supabase](https://supabase.com/), a modern, cloud-native database that provides a PostgreSQL-compatible interface.
 
 ## Features
 ------------
