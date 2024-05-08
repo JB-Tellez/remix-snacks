@@ -16,7 +16,7 @@ export default function DeleteIcon({id}: {id: number}) {
     const submit = useSubmit();
 
     function handleContinue() {
-        submit({id}, {method:"post", action:"/delete"})
+        submit({id}, {method:"post", action:"/delete-action"})
     }
 
     return (

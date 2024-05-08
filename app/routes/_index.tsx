@@ -4,12 +4,11 @@ import { useLoaderData } from "@remix-run/react";
 import Header from "~/components/header";
 import SnackList from "~/components/snack-list";
 import CreateForm from "~/components/create-form";
+import { getSnacks } from "~/data";
 
 export async function loader() {
-  const url = process.env.API_URL ?? '';
-  const res = await fetch(url);
-  const data = json(await res.json());
-  return data;
+  const snacksData = getSnacks();
+  return snacksData;
 }
 
 

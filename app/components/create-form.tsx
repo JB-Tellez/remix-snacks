@@ -1,8 +1,9 @@
 import { Button } from "~/components/ui/button"
+import { Form } from "@remix-run/react"; // TODO: consider useFetcher
   
 export default function CreateForm() {
     return (
-        <form className="flex items-center gap-x-2" action="/create" method="POST">
+        <Form className="flex items-center gap-x-2" action="/create-action" method="POST">
         <fieldset className="border border-black px-2 rounded">
             <label htmlFor="name" className="sr-only">Name</label>
             <input id="name" name="name" type="text" placeholder="snack name" required />
@@ -12,6 +13,6 @@ export default function CreateForm() {
             <input id="description" name="description" type="text" placeholder="snack description" required />
         </fieldset>
         <Button type="submit">Submit</Button>
-    </form>
+    </Form>
     );
 }

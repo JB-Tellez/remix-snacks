@@ -12,14 +12,12 @@ export async function action({
     });
 
     const response = await fetch(url, {
-        method: 'POST',
+        method: 'PUT',
         body,
         headers: {
             'content-type': 'application/json'
         },
     });
-
-    console.log(response);
    
     return redirect('/');
   }
