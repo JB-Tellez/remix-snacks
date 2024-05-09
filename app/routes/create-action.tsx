@@ -1,12 +1,12 @@
 import { ActionFunctionArgs, redirect } from "@remix-run/node";
 import { createSnack } from "~/data";
-import Snack from "~/types/snack";
+import SnackData from "~/types/snack-data";
 
 export async function action({
     request,
 }: ActionFunctionArgs) {
     const formData: FormData = await request.formData();
-    const snackData: Snack = {
+    const snackData: SnackData = {
         name: formData.get('name')?.toString() ?? '',
         description: formData.get('description')?.toString() ?? ''
     };

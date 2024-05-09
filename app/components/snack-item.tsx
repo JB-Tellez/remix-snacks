@@ -1,9 +1,12 @@
+import { FC } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import Snack from "~/types/snack";
 import EditIcon from "~/components/edit-icon";
-import DeleteIcon from "./delete-icon";
+import DeleteIcon from "~/components/delete-icon";
+import SnackReceiver from "~/types/snack-receiver";
 
-export default function SnackItem({ snack }: { snack: Snack }) {
+
+
+const SnackItem: FC<SnackReceiver> = ({snack, ...props}) => {
   return (
     <Card>
       <CardHeader>
@@ -12,10 +15,12 @@ export default function SnackItem({ snack }: { snack: Snack }) {
       <CardContent className="flex justify-between">
         <CardDescription>{snack.description}</CardDescription>
         <div className="flex">
-          <EditIcon />
-          <DeleteIcon id={snack.id} />
+          <EditIcon snack={snack} />
+          <DeleteIcon snack={snack} />
         </div>
       </CardContent>
     </Card>
   );
 }
+
+export default  SnackItem

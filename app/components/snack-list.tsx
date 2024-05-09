@@ -1,4 +1,4 @@
-import Snack from "~/types/snack";
+import Snack from "~/types/snack-record";
 import SnackItem from "./snack-item";
 
 export default function SnackList({ snacks }: { snacks: Snack[] }) {

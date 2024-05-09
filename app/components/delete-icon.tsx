@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useFetcher } from "@remix-run/react";
 import {
     AlertDialog,
@@ -10,13 +11,15 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from '~/components/ui/alert-dialog'
+import SnackReceiver from "~/types/snack-receiver";
 
-export default function DeleteIcon({id}: {id: number}) {
+
+ const DeleteIcon: FC<SnackReceiver> = ({snack, ...props}) => {
 
     const { submit } = useFetcher();
 
     function handleContinue() {
-        submit({id}, {method:"post", action:"/delete-action"})
+        submit({id:snack.id}, {method:"post", action:"/delete-action"})
     }
 
     return (
@@ -44,3 +47,5 @@ export default function DeleteIcon({id}: {id: number}) {
     </AlertDialog>
     );
 }
+
+export default DeleteIcon;

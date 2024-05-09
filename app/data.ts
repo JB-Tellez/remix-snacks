@@ -1,5 +1,6 @@
 import { json } from "@remix-run/node";
-import Snack from "./types/snack";
+import Snack from "./types/snack-record";
+import SnackData from "./types/snack-data";
 
 export async function getSnacks() {
     const url = process.env.API_URL ?? '';
@@ -16,11 +17,11 @@ export async function getSnack(id:number) {
     return data.data[0];
 }
 
-export async function createSnack(snack: Snack) {
+export async function createSnack(snackData: SnackData) {
     const url:string = process.env.API_URL ?? '';
     const response = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify(snack),
+        body: JSON.stringify(snackData),
         headers: {
             'content-type': 'application/json'
         },
