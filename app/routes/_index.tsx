@@ -2,15 +2,15 @@ import { useLoaderData } from "@remix-run/react";
 import SnackList from "~/components/snack-list";
 import CreateForm from "~/components/create-form";
 import { getSnacks } from "~/data";
+import SnackRecord from "~/types/snack-record";
 
 export async function loader() {
-  const snacksData = await getSnacks();
-  return snacksData;
+  return await getSnacks();
 }
 
 
 export default function SnacksRoute() {
-  const snacks = useLoaderData<typeof loader>();
+  const snacks:SnackRecord[] = useLoaderData<typeof loader>();
   return (
     <>
       <CreateForm />

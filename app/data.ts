@@ -13,7 +13,6 @@ export async function getSnack(id:number) {
     const url = process.env.API_URL ?? '';
     const response = await fetch(`${url}/${id}`);
     const data = await response.json();
-    console.log({data});
     return data.data[0];
 }
 
