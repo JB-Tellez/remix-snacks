@@ -1,18 +1,13 @@
-import { json } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import { getSnack } from "~/data";
+import Snack from "~/types/snack";
 
-export const loader = async ({ params }) => {
-  return await getSnack(params.snackId);
-    // const url = process.env.API_URL ?? '';
-    // const res = await fetch(url);
-    // // const snack = await getContact(params.snackId);
-    // const snack = json(await res.json());
-    // return json({ snack });
-  };
+export const loader = async ({ params }: { params: { snackId: string } }) => {
+  return await getSnack(parseInt(params.snackId));
+};
 
-export default function Snack() {
-    const { snack } = useLoaderData<typeof loader>();
+export default function SnackItem() {
+  const  snack:Snack  = useLoaderData<typeof loader>();
 
-    return <h1>Snack coming soon</h1>
+  return <h1>{ snack.name }</h1>;
 }

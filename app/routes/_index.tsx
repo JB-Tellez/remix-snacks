@@ -7,7 +7,7 @@ import CreateForm from "~/components/create-form";
 import { getSnacks } from "~/data";
 
 export async function loader() {
-  const snacksData = getSnacks();
+  const snacksData = await getSnacks();
   return snacksData;
 }
 
@@ -18,7 +18,7 @@ export default function SnacksRoute() {
     <main className="flex flex-col items-center my-8 gap-y-8 w-1/2 mx-auto">
       <Header />
       <CreateForm />
-      <SnackList snacks={snacks.data} />
+      <SnackList snacks={snacks} />
     </main>
   );
 }

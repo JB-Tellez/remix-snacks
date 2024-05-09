@@ -4,15 +4,16 @@ import Snack from "./types/snack";
 export async function getSnacks() {
     const url = process.env.API_URL ?? '';
     const response = await fetch(url);
-    const data = json(await response.json());
-    return data;
+    const data = await response.json();
+    return data.data;
 }
 
 export async function getSnack(id:number) {
     const url = process.env.API_URL ?? '';
     const response = await fetch(`${url}/${id}`);
-    const data = json(await response.json());
-    return data;
+    const data = await response.json();
+    console.log({data});
+    return data.data[0];
 }
 
 export async function createSnack(snack: Snack) {
