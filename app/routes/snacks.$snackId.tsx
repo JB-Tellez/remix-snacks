@@ -8,7 +8,7 @@ export const loader = async ({ params }: { params: { snackId: string } }) => {
   return await getSnack(parseInt(params.snackId));
 };
 
-export default function SnackView() {
+export default function SnackDetail() {
   const  snack:Snack  = useLoaderData<typeof loader>();
 
   return (
