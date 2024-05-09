@@ -1,5 +1,4 @@
-import { Form, Link, useLoaderData } from "@remix-run/react";
-import Header from "~/components/header";
+import { Link, useLoaderData } from "@remix-run/react";
 import { getSnack } from "~/data";
 import Snack from "~/types/snack-record";
 import { Button } from "~/components/ui/button"
@@ -13,12 +12,11 @@ export default function SnackView() {
   const  snack:Snack  = useLoaderData<typeof loader>();
 
   return (
-    <main className="flex flex-col items-center my-8 gap-y-8 w-1/2 mx-auto">
-      <Header/>
+    <>
       <SnackItem snack={snack} editable={true} />
       <Link to="/">
         <Button>Snack List</Button>
       </Link>
-    </main>
+    </>
   );
 }
