@@ -7,8 +7,12 @@ const API_URL = process.env.API_URL ?? '';
 export async function getSnacks() {
     const url = API_URL;
     const response = await fetch(url);
-    const data = await response.json();
-    return data.data;
+    let data = await response.json();
+
+    if (data.hasOwnProperty('data')) {
+        data = data.data;
+    }
+    return data;
 }
 
 export async function getSnack(id:number) {
@@ -36,8 +40,8 @@ export async function deleteSnack(id:number) {
     const response = await fetch(url, {
         method: 'DELETE'
     });
-    const data = json(await response.json());
-    return data;
+    // const data = json(await response.json());
+    return "success";
 }
 
 export async function updateSnack(snack: Snack) {
