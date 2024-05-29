@@ -37,8 +37,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Remix Snacks" },
-    { name: "description", content: "Remix powered Snacks app" },
+    { title: "Full Stack Snacks" },
+    { name: "description", content: "Remix powered Snacks app to evaluate the library." },
   ];
 };
 
