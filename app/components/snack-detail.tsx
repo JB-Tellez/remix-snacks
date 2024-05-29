@@ -7,6 +7,7 @@ import { Button } from "~/components/ui/button"
 import { DialogTrigger, DialogTitle, DialogDescription, DialogHeader, DialogFooter, DialogContent, Dialog } from "~/components/ui/dialog"
 import { CardTitle, CardHeader, CardContent, Card, CardDescription } from "~/components/ui/card"
 import SnackReceiver from "~/types/snack-receiver";
+import { Form } from "@remix-run/react";
 
 const SnackDetail: FC<SnackReceiver> = ({ snack }) => {
   return (
@@ -28,34 +29,38 @@ const SnackDetail: FC<SnackReceiver> = ({ snack }) => {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Edit {snack.name}</DialogTitle>
-                    <DialogDescription>Make changes to the snack details here.</DialogDescription>
-                  </DialogHeader>
-                  <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                      <Label className="text-right" htmlFor="name">
-                        Name
-                      </Label>
-                      <Input className="col-span-3" defaultValue={snack.name} id="name" />
+                  <Form action={`/edit-action`} method="post">
+                    <Input type="hidden" value={snack.id} name="snackId" />
+                    <DialogHeader>
+                      <DialogTitle>Edit {snack.name}</DialogTitle>
+                      <DialogDescription>Make changes to the snack details here.</DialogDescription>
+                    </DialogHeader>
+                    <div className="grid gap-4 py-4">
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label className="text-right" htmlFor="name">
+                          Name
+                        </Label>
+                        <Input className="col-span-3" defaultValue={snack.name} id="name" name="name" />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label className="text-right" htmlFor="description">
+                          Description
+                        </Label>
+                        <Textarea
+                          className="col-span-3"
+                          defaultValue={snack.description}
+                          id="description"
+                          name="description"
+                        />
+                      </div>
                     </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                      <Label className="text-right" htmlFor="description">
-                        Description
-                      </Label>
-                      <Textarea
-                        className="col-span-3"
-                        defaultValue={snack.description}
-                        id="description"
-                      />
-                    </div>
-                  </div>
-                  <DialogFooter>
-                    <Button type="submit">Save Changes</Button>
-                    <div>
-                      <Button variant="outline">Cancel</Button>
-                    </div>
-                  </DialogFooter>
+                    <DialogFooter>
+                      <Button type="submit">Save Changes</Button>
+                      <div>
+                        <Button variant="outline">Cancel</Button>
+                      </div>
+                    </DialogFooter>
+                  </Form>
                 </DialogContent>
               </Dialog>
               <Button

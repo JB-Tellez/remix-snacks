@@ -44,7 +44,17 @@ export async function deleteSnack(id:number) {
     return "success";
 }
 
-export async function updateSnack(snack: Snack) {
-    return null; // TODO
+export async function updateSnack(snackId:string, snackData: SnackData) {
+    const url = `${API_URL}/${snackId}`;
+    const response = await fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(snackData),
+        headers: {
+            'content-type': 'application/json'
+        },
+    });
+
+    const data = json(await response.json());
+    return data;
 }
 
