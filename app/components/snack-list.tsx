@@ -6,7 +6,7 @@ export default function SnackList({ snacks }: { snacks: Snack[] }) {
     return (
         <div className="grid gap-4">
         {snacks.map(snack => (
-            <SnackItem snack={snack} />
+            <SnackItem key={snack.id} snack={snack} />
         ))}
     </div>
     );
