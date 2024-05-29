@@ -1,6 +1,9 @@
 import { Button } from "~/components/ui/button"
 import { useNavigation } from "@remix-run/react";
 import { Form } from "@remix-run/react";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
   
 export default function CreateForm() {
@@ -8,16 +11,20 @@ export default function CreateForm() {
     const navigation = useNavigation();
 
     return (
-        <Form className="flex items-center gap-x-2" action="/create-action" method="POST" >
-        <fieldset className="border border-black px-2 rounded" disabled={navigation.state === "submitting"}>
-            <label htmlFor="name" className="sr-only">Name</label>
-            <input id="name" name="name" type="text" placeholder="snack name" required />
-        </fieldset>
-        <fieldset className="border border-black px-2 rounded">
-            <label htmlFor="description" className="sr-only">Name</label>
-            <input id="description" name="description" type="text" placeholder="snack description" required />
-        </fieldset>
-        <Button disabled={navigation.state === "submitting"} type="submit">CREATE</Button>
-    </Form>
+        <Form className="grid gap-4" action="/create-action" method="post">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="snack-name">Snack Name</Label>
+              <Input id="snack-name" name="name" placeholder="Enter snack name" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="snack-description">Description</Label>
+              <Textarea id="snack-description" name="description" placeholder="Describe your favorite snack" rows={3} />
+            </div>
+          </div>
+          <Button className="w-full sm:w-auto" type="submit">
+            Add Snack
+          </Button>
+        </Form>
     );
 }

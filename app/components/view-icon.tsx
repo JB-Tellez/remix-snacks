@@ -2,13 +2,23 @@ import { FC } from "react";
 import { Link } from "@remix-run/react";
 import SnackReceiver from "~/types/snack-receiver";
 
-const ViewIcon: FC<SnackReceiver> = ({ snack, ...props }) => {
+const ViewIcon: FC<SnackReceiver> = ({ snack }) => {
     return (
-        <Link to={`snacks/${snack.id}`}>
+        <Link className="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50" to={`snacks/${snack.id}`}>
             <i>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                    <path d="M6.5 9a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0Z" />
-                    <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM9 5a4 4 0 1 0 2.248 7.309l1.472 1.471a.75.75 0 1 0 1.06-1.06l-1.471-1.472A4 4 0 0 0 9 5Z" clipRule="evenodd" />
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
                 </svg>
             </i>
         </Link>
@@ -16,4 +26,3 @@ const ViewIcon: FC<SnackReceiver> = ({ snack, ...props }) => {
 }
 
 export default ViewIcon;
-

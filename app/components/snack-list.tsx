@@ -4,10 +4,10 @@ import SnackItem from "./snack-item";
 export default function SnackList({ snacks }: { snacks: Snack[] }) {
 
     return (
-        <ul className="space-y-4 w-full">
-            {snacks.map((snack: Snack) => (
-                <SnackItem key={snack.id} snack={snack} />
-            ))}
-        </ul>
+        <div className="grid gap-4">
+        {snacks.map(snack => (
+            <SnackItem snack={snack} />
+        ))}
+    </div>
     );
 }
