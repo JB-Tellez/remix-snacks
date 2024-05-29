@@ -1,7 +1,9 @@
-# Snack CRUD App
+# Full Stack Snacks
 =================
 
 A modern web application for managing snacks, built with cutting-edge technologies.
+
+It is my go to application when I am evaluating tools.
 
 ## Overview
 ------------
