@@ -6,7 +6,11 @@ A modern web application for managing snacks, built with cutting-edge technologi
 ## Overview
 ------------
 
-This repository contains a web application that allows users to perform CRUD (Create, Read, Update, Delete) operations on a Snack resource. A Snack has two attributes: `name` and `description`. The application is built using [Remix](https://remix.run/), a popular framework for building web applications, and utilizes [Shadcn/ui](https://ui.shadcn.com/) for a consistent and visually appealing user interface. Styling is handled by [Tailwind CSS](https://tailwindcss.com/), a utility-first CSS framework.
+This repository contains a web application that allows users to perform CRUD (Create, Read, Update, Delete) operations on a Snack resource. 
+
+If you just want to see it in action here is [link to demo.](https://remix-snacks.vercel.app/) just please keep the language suitable for work.
+
+A Snack has two attributes: `name` and `description`. The application is built using [Remix](https://remix.run/), a popular framework for building web applications, and utilizes [Shadcn/ui](https://ui.shadcn.com/) for a consistent and visually appealing user interface. Styling is handled by [Tailwind CSS](https://tailwindcss.com/), a utility-first CSS framework.
 
 ## Backend
 ------------
@@ -28,10 +32,11 @@ The backend API is built using [FastAPI](https://fastapi.tiangolo.com/), a moder
 To run the application, follow these steps:
 
 1. **Clone the repository**: `git clone <repository_url>`
-2. **Install dependencies**: `npm install` or `yarn install`
-3. **Start the application**: `npm run dev` or `yarn dev`
-4. **Open your web browser and navigate to**: `http://localhost:5173`
-5. **NOTE: you will need your own API**
+1. **Install dependencies**: `npm install` or `yarn install`
+1. **Start the application**: `npm run dev` or `yarn dev`
+1. **Open your web browser and navigate to**: `http://localhost:5173`
+1. NOTE: you will need **your own API** if you are building your own version.
+    
 
 
 ## Contributing
