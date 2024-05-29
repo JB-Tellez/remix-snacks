@@ -24,8 +24,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-      <main className="container mx-auto px-4 py-12 md:px-6 lg:py-16 space-y-6">
-        <Header/>
+        <main className="container mx-auto px-4 py-12 md:px-6 lg:py-16 space-y-6">
+          <Header />
           {children}
         </main>
         <ScrollRestoration />
