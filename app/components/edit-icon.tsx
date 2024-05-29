@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "@remix-run/react";
 import SnackReceiver from "~/types/snack-receiver";
 
-const EditIcon: FC<SnackReceiver> = ({ snack, ...props }) => {
+const EditIcon: FC<SnackReceiver> = ({ snack }) => {
     return (
         <Link to={`/snacks/edit/${snack.id}`}>
             <i>
